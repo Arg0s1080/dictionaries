@@ -13,7 +13,7 @@
 # (ɔ) Iván Rincón 2018
 
 
-# Cyrillic (ukrainian transliteration)
+# Cyrillic (ukrainian chars added)
 
 transliteration = {
     u"\u0027": "",                         # '
