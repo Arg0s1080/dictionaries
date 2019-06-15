@@ -13,6 +13,8 @@
 #
 # (ɔ) Iván Rincón 2019
 
+from ._functions import transliterate
+
 
 def arabic() -> dict:
     from .arabic import transliteration
