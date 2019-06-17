@@ -20,11 +20,11 @@ def transliterate(string: str, dictionary: dict, sep=" ", upper=False, like_sep=
     sep              (str): string delimiter. Whitespace by default.
     upper           (bool): if it's True, returns a string converted to uppercase.
                             False by default.
-    like_sep (str or list): chars treated as separator.
+    like_sep (str or list): chars treated as separator. This chars will be replaced by sep char
     remove   (str or list): chars to remove in the string
     raise_error     (bool): If it's True raise ValueError if a char is not in dict.
 
-    Note: sep and like_sep kwargs are vestiges of a previous version of this function.
+    Note: sep and like_sep kwargs, although functional, are vestiges of a previous version of this method.
 
     """
     if remove:
@@ -35,13 +35,10 @@ def transliterate(string: str, dictionary: dict, sep=" ", upper=False, like_sep=
             string = string.replace(like_sep[i], sep)
     s = ""
     for char in string:
-        if not raise_error:
-            s += dictionary[char] if char in dictionary else char
-        else:
-            try:
-                s += dictionary[char]
-            except KeyError as ex:
-                raise ValueError("'%s' is not in dictionary" % ex.args[0])
+        try:
+            s += dictionary[char] if char in dictionary or raise_error else char
+        except KeyError as ex:
+            raise ValueError("'%s' is not in dictionary" % ex.args[0])
     return s if not upper else s.upper()
 
 
