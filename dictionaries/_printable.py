@@ -71,8 +71,8 @@ whitespace = {
     u"\u000C": "\f"   # new page
 }
 
-printable = {}
-
-printable.update(punctuation)
-printable.update(digits)
-printable.update(whitespace)
+# printable = {}
+#
+# printable.update(punctuation)
+# printable.update(digits)
+# printable.update(whitespace)
