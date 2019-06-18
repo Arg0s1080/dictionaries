@@ -12,11 +12,14 @@
 #
 # (ɔ) Iván Rincón 2018
 
+# ICAO specifications (1)
+# Not ICAO specs      (2)
 
-# Modern hebrew (Experimental)
+# Modern hebrew (Experimental) (2)
 
 transliteration = {
-    u"\u0027": "",                 # '
+    # u"\u0027": "",                         # ' (1)
+    u"\u0020": " ",                        # whitespace
 
     # Consonants
     u"\u05D0":             "",     # א

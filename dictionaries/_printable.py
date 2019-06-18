@@ -63,7 +63,7 @@ digits = {
 }
 
 whitespace = {
-    u"\u0020": " ",   # whitespace
+    # u"\u0020": " ",   # whitespace  # Added in dicts
     u"\u0009": "\t",  # horizontal tab
     u"\u000A": "\n",  # new line
     u"\u000D": "\r",  # carriage return

@@ -12,11 +12,14 @@
 #
 # (ɔ) Iván Rincón 2018
 
+# ICAO specifications (1)
+# Not ICAO specs      (2)
 
-# Cyrillic (serbian chars added)
+# Cyrillic (serbian chars added) (1)
 
 transliteration = {
-    u"\u0027": "",                         # '
+    # u"\u0027": "",                         # ' (1)
+    u"\u0020": " ",                        # whitespace (2)
     u"\u0410": "A",    u"\u0430": "a",     # А, а
     u"\u0411": "B",    u"\u0431": "b",     # Б, б
     u"\u0414": "D",    u"\u0434": "d",     # Д, д

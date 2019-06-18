@@ -12,12 +12,14 @@
 #
 # (ɔ) Iván Rincón 2018
 
+# ICAO specifications (1)
+# Not ICAO specs      (2)
 
-# Arabic
+# Arabic (1)
 
 transliteration = {
-    # ICAO specifications
-    u"\u0027": "",     # '
+    # u"\u0027": "",     # ' (1)
+    u"\u0020": " ",    # whitespace (2)
     u"\u0628": "B",    # ب
     u"\u062B": "XTH",  # ث
     u"\u062C": "J",    # ج
@@ -76,7 +78,7 @@ transliteration = {
     u"\u06D2": "XYB",  # ے
     u"\u06D3": "XBE",  # ۓ
 
-    # Some experimental additions (It seems to work well)
+    # Some experimental additions (It seems to work well) (2)
     u"\u0621": "",     # ء
     u"\u0670": "",     # '
     u"\u0627": "A",    # ا

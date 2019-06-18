@@ -12,10 +12,14 @@
 #
 # (ɔ) Iván Rincón 2018
 
+# ICAO specifications (1)
+# Not ICAO specs (2)
 
-# Latin based
+# Latin based (1)
 
 transliteration = {
+    # u"\u0027": "",     # ' (1)
+    u"\u0020": " ",  # whitespace (2)
 
     u"\u0041": "A",   u"\u0061": "a",   # A, a
     u"\u00C1": "A",   u"\u00E1": "a",   # Á, á

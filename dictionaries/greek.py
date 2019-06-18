@@ -12,11 +12,14 @@
 #
 # (ɔ) Iván Rincón 2018
 
+# ICAO specifications (1)
+# Not ICAO specs      (2)
 
-# Modern greek (Experimental)
+# Modern greek (Experimental) (2)
 
 transliteration = {
-    u"\u0027": "",
+    # u"\u0027": "",                     # ' (1)
+    u"\u0020": " ",                    # whitespace (2)
     u"\u0386": "A", u"\u03AC": "a",    # Ά, ά
     u"\u0391": "A", u"\u03B1": "a",    # Α, α
     u"\u0392": "B", u"\u03B2": "b",    # Β, β
