@@ -14,7 +14,7 @@
 
 
 def transliterate(string: str, dictionary: dict, sep=" ", upper=False, like_sep="", remove="",
-                  raise_error=False) -> str:
+                  strict=False) -> str:
     """Transliterates convertibles UTF8 chars of a given language to its ASCII equivalent
 
     sep              (str): string delimiter. Whitespace by default.
@@ -22,7 +22,8 @@ def transliterate(string: str, dictionary: dict, sep=" ", upper=False, like_sep=
                             False by default.
     like_sep (str or list): chars treated as separator. This chars will be replaced by sep char
     remove   (str or list): chars to remove in the string
-    raise_error     (bool): If it's True raise ValueError if a char is not in dict.
+    strict         (bool):  If it's True raise ValueError if a char is not in dict. Dict setted is
+                            updated with digits, punctuation and whitespace chars (See ._printable.py)
 
     Note: sep and like_sep kwargs, although functional, are vestiges of a previous version of this method.
 
@@ -33,10 +34,15 @@ def transliterate(string: str, dictionary: dict, sep=" ", upper=False, like_sep=
     if like_sep:
         for i in range(len(like_sep)):
             string = string.replace(like_sep[i], sep)
+    if strict:
+        from dictionaries._printable import punctuation, digits, whitespace
+        dictionary.update(punctuation)
+        dictionary.update(digits)
+        dictionary.update(whitespace)
     s = ""
     for char in string:
         try:
-            s += dictionary[char] if char in dictionary or raise_error else char
+            s += dictionary[char] if char in dictionary or strict else char
         except KeyError as ex:
             raise ValueError("'%s' is not in dictionary" % ex.args[0])
     return s if not upper else s.upper()
